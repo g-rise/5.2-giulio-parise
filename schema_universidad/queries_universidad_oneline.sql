@@ -104,6 +104,6 @@ select * FROM persona WHERE fecha_nacimiento = (SELECT MAX(fecha_nacimiento) FRO
 
 
 -- 11. Retorna un llistat amb els professors/es que tenen un departament associat i que no imparteixen cap assignatura.
-SELECT p.id, p.nombre, p.apellido1, p.apellido2, d.nombre FROM profesor pr JOIN persona p ON pr.id_profesor = p.id JOIN departamento d ON pr.id_profesor = d.id LEFT JOIN asignatura a USING (id_profesor) WHERE a.id IS NULL;
+SELECT p.id, p.nombre, p.apellido1, p.apellido2, d.nombre FROM profesor pr JOIN persona p ON pr.id_profesor = p.id JOIN departamento d ON pr.id_departamento = d.id LEFT JOIN asignatura a USING (id_profesor) WHERE a.id IS NULL;
 
 
